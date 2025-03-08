@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Hotel.css">
+    <script src="../JS/Hotel.js" defer></script>
+</head>
+
+<body>
+    <!-- Thanh navbar -->
+    <div class="navbar navbar-expand-md bg-secondary" id="navbar">
+        <img src="../img/logo.png" class="navbar-brand" id="logo" style="width: 50px;">
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="Home.html" class="nav-link">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Intro.html" class="nav-link">Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Hotel.html" class="nav-link active">Khách sạn</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Plane.html" class="nav-link">Đặt vé máy bay</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Car.html" class="nav-link">Thuê xe</a>
+                </li>
+            </ul>
+            <div id="check-out" class="ms-auto">
+                <a href="Checkout.html" class="text-decoration-none">
+                    <b class="bi bi-bag-check text-white ms-2 border border-white p-2"> Thanh toán</b>
+                </a>
+            </div>
+            <div class="avatar-icon ms-2">
+                <a href="Login.html" class="text-decoration-none">
+                    <b class="bi bi-person-circle text-white border border-white p-2"> Đăng nhập</b>
+                </a>
+            </div>
+        </div>
+    </div>
+    <img src="../img/hotel-web.jpg" class="img-fluid w-100">
+    <div class="container" style="margin-top: -50px;">
+        <div class="card p-3">
+            <form>
+                <!-- Chọn khách sạn -->
+                <div class="mb-3">
+                    <label for="hotel" class="form-label">Chọn khách sạn</label>
+                    <select id="hotel" class="form-select">
+                        <option value="" disabled selected>Chọn khách sạn</option>
+                        <!-- Hạ Long -->
+                        <option value="InterContinental Ha Long Bay Resort">InterContinental Ha Long Bay Resort</option>
+                        <option value="Royal Lotus Hotel Halong">Royal Lotus Hotel Halong</option>
+                        <option value="Bai Tu Long Hotel">Bai Tu Long Hotel</option>
+
+                        <!-- Đà Nẵng -->
+                        <option value="InterContinental Danang Sun Peninsula Resort">InterContinental Danang Sun
+                            Peninsula Resort</option>
+                        <option value="Novotel Danang Premier Han River">Novotel Danang Premier Han River</option>
+                        <option value="The Blossom Hotel">The Blossom Hotel</option>
+
+                        <!-- Hội An -->
+                        <option value="Four Seasons Resort The Nam Hai">Four Seasons Resort The Nam Hai</option>
+                        <option value="The Edge Hoi An">The Edge Hoi An</option>
+                        <option value="Thanh Binh Riverside Hotel">Thanh Binh Riverside Hotel</option>
+
+                        <!-- Nha Trang -->
+                        <option value="Vinpearl Luxury Nha Trang">Vinpearl Luxury Nha Trang</option>
+                        <option value="Novotel Nha Trang">Novotel Nha Trang</option>
+                        <option value="The Light Hotel & Resort">The Light Hotel & Resort</option>
+
+                        <!-- Đà Lạt -->
+                        <option value="InterContinental Da Lat Resort">InterContinental Da Lat Resort</option>
+                        <option value="Dalat Palace Luxury Hotel">Dalat Palace Luxury Hotel</option>
+                        <option value="TTC Hotel Premium - Ngọc Lan">TTC Hotel Premium - Ngọc Lan</option>
+
+                        <!-- Phú Quốc -->
+                        <option value="InterContinental Phu Quoc Long Beach Resort">InterContinental Phu Quoc Long Beach
+                            Resort</option>
+                        <option value="Novotel Phu Quoc Resort">Novotel Phu Quoc Resort</option>
+                        <option value="Sea Sense Resort">Sea Sense Resort</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="checkin" class="form-label">Nhận phòng</label>
+                        <input type="date" class="form-control" id="checkin" required>
+                    </div>
+
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="checkout" class="form-label">Trả phòng</label>
+                        <input type="date" class="form-control" id="checkout" required>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <div class="col-12 col-md-4">
+                        <label for="adults" class="form-label">Người lớn</label>
+                        <input type="number" class="form-control text-center" id="adults" value="0" min="0">
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <label for="children" class="form-label">Trẻ em</label>
+                        <input type="number" class="form-control text-center" id="children" value="0" min="0">
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <label for="rooms" class="form-label">Phòng</label>
+                        <input type="number" class="form-control text-center" id="rooms" value="0" min="0">
+                    </div>
+                </div>
+
+                <!-- Button submit -->
+                <button type="submit" class="btn btn-primary w-100">Đặt khách sạn</button>
+            </form>
+        </div>
+    </div>
+    <h3>Khách sạn</h3>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <button class="btn btn-info col-12 col-md-2" data-bs-toggle="collapse" data-bs-target="#HL">Hạ
+                Long</button>
+            <button class="btn btn-info col-12 col-md-2" data-bs-toggle="collapse" data-bs-target="#ĐN">Đà
+                Nẵng</button>
+            <button class="btn btn-info col-12 col-md-2" data-bs-toggle="collapse" data-bs-target="#HA">Hội
+                An</button>
+            <button class="btn btn-info col-12 col-md-2" data-bs-toggle="collapse" data-bs-target="#NT">Nha
+                Trang</button>
+            <button class="btn btn-info col-12 col-md-2" data-bs-toggle="collapse" data-bs-target="#ĐL">Đà
+                Lạt</button>
+            <button class="btn btn-info col-12 col-md-2" data-bs-toggle="collapse" data-bs-target="#PQ">Phú
+                Quốc</button>
+        </div>
+    </div>
+    <!-- Hạ Long -->
+    <div class="container-fluid mt-3 collapse" id="HL">
+        <h4>Hạ Long</h4>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card w-100 h-100">
+                        <div class="card-img">
+                            <img src="../img/InterContinental Ha Long Bay Resort.jpg" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">13.500.000</span><br>
+                                <span class="new-price">12.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">InterContinental Ha Long Bay Resort</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="../img/Royal Lotus Hotel Halong.jpg" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price"></span><br>
+                                <span class="new-price">7.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">Royal Lotus Hotel Halong</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="../img/Bai Tu Long Hotel.jpg" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">4.000.000</span><br>
+                                <span class="new-price">3.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">Bai Tu Long Hotel</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Đà Nẵng -->
+    <div class="container-fluid mt-3 collapse" id="ĐN">
+        <h4>Đà Nẵng</h4>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card w-100 h-100">
+                        <div class="card-img">
+                            <img src="../img/InterContinental-Danang-Sun-Peninsula.jpg" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">15.000.000</span><br>
+                                <span class="new-price">10.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">InterContinental Danang Sun Peninsula Resort</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="../img/Novotel Danang Premier Han River.jpg" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price"></span><br>
+                                <span class="new-price">5.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">Novotel Danang Premier Han River</h5>
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="../img/The Blossom Hotel.jpg" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">4.000.000</span><br>
+                                <span class="new-price">3.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">The Blossom Hotel</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Hội An -->
+    <div class="container-fluid mt-3 collapse" id="HA">
+        <h4>Hội An</h4>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card w-100 h-100">
+                        <div class="card-img">
+                            <img src="../img/Four Seasons Resort The Nam Hai.jpg" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">15.000.000</span><br>
+                                <span class="new-price">10.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">Four Seasons Resort The Nam Hai</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="../img/The Edge Hoi An.jpg" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">8.000.000</span><br>
+                                <span class="new-price">5.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">The Edge Hoi An</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="../img/Thanh Binh Riverside Hotel.png" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">4.000.000</span><br>
+                                <span class="new-price">3.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">Thanh Binh Riverside Hotel</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Nha Trang -->
+    <div class="container-fluid mt-3 collapse" id="NT">
+        <h4>Nha Trang</h4>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card w-100 h-100">
+                        <div class="card-img">
+                            <img src="../img/Vinpearl Luxury Nha Trang.jpg" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">13.500.000</span><br>
+                                <span class="new-price">12.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">Vinpearl Luxury Nha Trang</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="../img/Novotel Nha Trang.jpg" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">9.000.000</span><br>
+                                <span class="new-price">7.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">Novotel Nha Trang</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="../img/The Light Hotel & Resort.jpg" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">4.000.000</span><br>
+                                <span class="new-price">3.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">The Light Hotel & Resort</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Đà Lạt -->
+    <div class="container-fluid mt-3 collapse" id="ĐL">
+        <h4>Đà Lạt</h4>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card w-100 h-100">
+                        <div class="card-img">
+                            <img src="../img/InterContinental Da Lat Resort.png" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">13.500.000</span><br>
+                                <span class="new-price">12.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">InterContinental Da Lat Resort</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="../img/Dalat Palace Luxury Hotel.jpg" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">7.000.000</span><br>
+                                <span class="new-price">5.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">Dalat Palace Luxury Hotel</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="../img/TTC Hotel Premium - Ngọc Lan.jpg" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">4.000.000</span><br>
+                                <span class="new-price">3.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">TTC Hotel Premium - Ngọc Lan</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Phú Quốc -->
+    <div class="container-fluid mt-3 collapse" id="PQ">
+        <h4>Phú Quốc</h4>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card w-100 h-100">
+                        <div class="card-img">
+                            <img src="../img/InterContinental Phu Quoc Long Beach Resort.jpg"
+                                class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">13.500.000</span><br>
+                                <span class="new-price">12.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">InterContinental Phu Quoc Long Beach Resort</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="../img/Novotel Phu Quoc Resort.jpg" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">8.000.000</span><br>
+                                <span class="new-price">5.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">Novotel Phu Quoc Resort</h5>
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="../img/Sea Sense Resort.jpg" class="card-img-top img-fluid">
+                        </div>
+                        <div class="card-header">
+                            <div class="price">
+                                <span class="old-price">4.000.000</span><br>
+                                <span class="new-price">3.000.000</span>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <h5 class="card-title">Sea Sense Resort</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <h3>Đối tác</h3>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="card col-12 col-md-3">
+                <img src="../img/InterContinental-logo.png" class="img-fluid">
+            </div>
+            <div class="card col-12 col-md-3">
+                <img src="../img/novotel-logo.png" class="img-fluid">
+            </div>
+            <div class="card col-12 col-md-3">
+                <img src="../img/vinpearl-logo.jpg" class="img-fluid">
+            </div>
+            <div class="card col-12 col-md-3">
+                <img src="../img/Royal Lotus-logo.jpg" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbox -->
+    <div class="chatbox">
+        <div class="card" id="card-chatbox">
+            <div class="card-header bg-secondary" id="header-chatbox">
+                <div class="card-title text-white">Chatbox</div>
+            </div>
+            <div class="card-body" id="body-chatbox">
+                <p class="inbox">Xin chào! Tôi có thể giúp gì được cho bạn?</p>
+            </div>
+            <div class="card-footer" id="footer-chatbox">
+                <input type="text" class="message" placeholder="Nhập tin nhắn">
+                <button class="btn" id="button-chatbox">Send</button>
+            </div>
+        </div>
+    </div>
+    <!-- Gọi tư vấn -->
+    <div id="call">
+        <i class="bi bi-telephone"></i>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Cột thông tin bản quyền -->
+                <div class="col-12 col-md-4 mb-3">
+                    <p>&copy; 2024 Công ty VietNam Tour</p>
+                </div>
+                <!-- Cột thông tin liên kết -->
+                <div class="col-12 col-md-4 mb-3">
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Chính sách bảo mật</a></li>
+                        <li><a href="#" class="text-white">Điều khoản sử dụng</a></li>
+                        <li><a href="#" class="text-white">Giới thiệu về chúng tôi</a></li>
+                    </ul>
+                </div>
+                <!-- Cột thông tin liên hệ -->
+                <div class="col-12 col-md-4 mb-3">
+                    <p><strong>Thông tin liên hệ:</strong></p>
+                    <p>Địa chỉ: 182 Lê Duẩn, Bến Thủy, Thành phố Vinh</p>
+                    <p>Điện thoại: 0238 3855 452</p>
+                    <p>Email: <a href="#" class="text-white">ITour@gmail.com</a></p>
+                </div>
+            </div>
+            <!-- Liên kết mạng xã hội -->
+            <div class="text-center">
+                <p>Theo dõi chúng tôi trên:</p>
+                <a href="#" class="text-white me-2">Facebook</a>
+                <a href="#" class="text-white me-2">Twitter</a>
+                <a href="#" class="text-white">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

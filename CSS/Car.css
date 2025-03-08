@@ -1,0 +1,159 @@
+#logo {
+    margin-left: 10px;
+}
+
+.nav-link {
+    margin-left: 50px;
+    color: white;
+}
+
+@media (max-width:768px) {
+    .nav-link {
+        margin-left: 10px;
+    }
+    #check-out {
+        margin-bottom: 20px;
+    }
+}
+
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(to right, #00bcd4, #007bff);
+}
+
+h3 {
+    margin-top: 50px;
+    color: red;
+    text-shadow: 0px 0px 10px red;
+    text-align: center;
+}
+
+.card {
+    overflow: hidden;
+}
+
+.card-img {
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-img {
+    transform: translateY(-20px);
+}
+
+.car-name {
+    opacity: 0;
+}
+
+.card:hover .car-name {
+    opacity: 1;
+}
+
+.price {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #777;
+}
+
+.new-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d9534f;
+}
+
+#call {
+    position: fixed;
+    bottom: 330px;
+    right: 25px;
+    padding: 10px 15px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 25px;
+    z-index: 1;
+    background-color: aliceblue;
+    animation: call 0.5s ease infinite;
+}
+
+@keyframes call {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(5px);
+    }
+
+    50% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.chatbox {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    max-width: 250px;
+    opacity: 0.1;
+    transition: opacity 0.5s;
+}
+
+.chatbox:hover {
+    opacity: 1;
+}
+
+#card-chatbox {
+    cursor: default;
+}
+
+#body-chatbox {
+    transition: none;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.inbox {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#footer-chatbox {
+    display: flex;
+}
+
+input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+}
+
+#button-chatbox {
+    color: white;
+    border: none;
+    background-color: #6c757d;
+    padding: 5px 10px;
+}
+
+#button-chatbox:hover {
+    background-color: white;
+    box-shadow: inset 0 5px 20px black;
+}
+
+footer {
+    background-image: url('../img/Fuji.jpeg');
+    background-size: cover;
+}

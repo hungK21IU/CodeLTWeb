@@ -1,0 +1,461 @@
+#logo {
+    margin-left: 10px;
+}
+
+.nav-link {
+    margin-left: 50px;
+    color: white;
+}
+
+@media (max-width:768px) {
+    .nav-link {
+        margin-left: 10px;
+    }
+    #check-out {
+        margin-bottom: 20px;
+    }
+}
+
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(to right, #00bcd4, #007bff);
+}
+
+h3 {
+    margin-top: 50px;
+    color: red;
+    text-shadow: 0px 0px 10px red;
+    text-align: center;
+}
+
+video {
+    width: 100%;
+}
+
+.card {
+    cursor: pointer;
+}
+
+.card-img {
+    overflow: hidden;
+}
+
+.card-img-top {
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.price {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #777;
+}
+
+.new-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+}
+/* Thời tiết */
+.ttt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+#ttt1 {
+    background-image: url('../img/Hạ Long.jpg');
+}
+
+#ttt2 {
+    background-image: url('../img/Đà Nẵng.jpg');
+}
+
+#ttt3 {
+    background-image: url('../img/Hội An.jpg');
+}
+
+#ttt4 {
+    background-image: url('../img/Nha Trang.jpg');
+}
+
+#ttt5 {
+    background-image: url('../img/Đà Lạt.jpg');
+}
+
+#ttt6 {
+    background-image: url('../img/Phú Quốc.jpg');
+}
+
+/* Lớp card dưới cùng */
+.tt {
+    width: 200px;
+    height: 250px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: default;
+}
+
+/* Khối xoay */
+.tt::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 200%;
+    animation: xoay 3s linear infinite;
+    filter: blur(30px);
+}
+
+#tt1::before {
+    background: linear-gradient(to right, #cccc, #ffffff);
+}
+
+#tt2::before {
+    background: linear-gradient(to right, #ffcc00, #ff6600);
+}
+
+#tt3::before {
+    background: linear-gradient(to right, #cccc, #ffcc00);
+}
+
+#tt4::before {
+    background: linear-gradient(to right, #ffcc00, #00aaff);
+}
+#tt5::before {
+    background: linear-gradient(to right, #00aaff, #ffffff);
+}
+#tt6::before {
+    background: linear-gradient(to right, #cccc, #ffcc00);
+}
+
+@keyframes xoay {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Lớp card trên cùng */
+.tt::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    inset: 5px;
+    border-radius: 15px;
+}
+
+/* Mây*/
+.cloud {
+    width: 250px;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#dc {
+    animation: dc 5s linear infinite;
+}
+
+.blue {
+    background-color: #4c9beb;
+}
+.black {
+    background-color: grey;
+}
+
+.left-part {
+    width: 45px;
+    height: 45px;
+    border-radius: 50% 50% 30% 50%;
+    display: inline-block;
+    margin-right: -25px;
+}
+
+.mid-part {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.right-part {
+    width: 45px;
+    height: 45px;
+    border-radius: 50% 50% 50% 30%;
+    display: inline-block;
+    margin-left: -25px;
+}
+
+@keyframes dc {
+    0% {
+        transform: translate(0);
+        opacity: 1;
+    }
+
+    25% {
+        transform: translateX(15px);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translate(0);
+        opacity: 1;
+    }
+
+    75% {
+        transform: translateX(-15px);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+/* Mặt Trời */
+.sun {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #fcbb04, #fffc00);
+    z-index: 1;
+    position: relative;
+}
+
+.sun::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: yellow;
+    animation: tỏa 2s infinite;
+}
+
+@keyframes tỏa {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Mưa */
+.rain {
+    display: flex;
+    justify-content: center;
+}
+#rain1 {
+    margin-top: -5px;
+}
+#rain2{
+    margin-top: -50px;
+}
+
+.drop {
+    width: 2px;
+    margin: 5px 10px;
+    background: #789;
+    box-shadow: 1px 0.5px 1px 0.5px rgba(0, 0, 0, 0.75);
+    animation: mưa 1s infinite ease-out;
+    z-index: 1;
+}
+
+
+.drop:nth-child(1) {
+    height: 10px;
+    animation-delay: -1.0s;
+}
+
+.drop:nth-child(2) {
+    height: 20px;
+    animation-delay: -1.4s;
+}
+
+.drop:nth-child(3) {
+    height: 15px;
+    animation-delay: -1.6s;
+}
+
+.drop:nth-child(4) {
+    height: 10px;
+    animation-delay: -1.2s;
+}
+
+.drop:nth-child(5) {
+    height: 5px;
+    animation-delay: -1.6s;
+}
+
+@keyframes mưa {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    100% {
+        opacity: 0.2;
+        transform: translate(0, 50px);
+    }
+}
+
+/* Sấm sét */
+.thunder {
+    width: 20px;
+    height: 50px;
+    clip-path: polygon(100% 0, 23% 46%, 46% 44%, 15% 69%, 38% 67%, 0 100%, 76% 57%, 53% 58%, 88% 33%, 60% 37%);
+    background-color: #ffcc00;
+    z-index: 1;
+    margin-top: -10px;
+    animation: flash 3s infinite;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+h5 {
+    z-index: 1;
+    color: white;
+}
+.temp {
+    color: white;
+    z-index: 1;
+}
+
+.humidity {
+    color: white;
+    z-index: 1;
+}
+
+/* Gọi tư vấn */
+#call {
+    position: fixed;
+    bottom: 330px;
+    right: 25px;
+    padding: 10px 15px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 25px;
+    z-index: 1;
+    background-color: aliceblue;
+    animation: call 0.5s ease infinite;
+}
+
+@keyframes call {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(5px);
+    }
+
+    50% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Chatbox */
+.chatbox {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    max-width: 250px;
+    opacity: 0.1;
+    transition: opacity 0.5s;
+    z-index: 1;
+}
+
+.chatbox:hover {
+    opacity: 1;
+}
+
+#card-chatbox {
+    cursor: default;
+}
+
+#body-chatbox {
+    height: 200px;
+    overflow-y: scroll;
+}
+
+#body-chatbox:hover {
+    box-shadow: none;
+}
+
+.inbox {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#footer-chatbox {
+    display: flex;
+}
+
+input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+}
+
+#button-chatbox {
+    color: white;
+    border: none;
+    background-color: #6c757d;
+    padding: 5px 10px;
+}
+
+#button-chatbox:hover {
+    background-color: white;
+    box-shadow: inset 0 5px 20px black;
+}
+
+footer {
+    background-image: url('../img/Fuji.jpeg');
+    background-size: cover;
+}
